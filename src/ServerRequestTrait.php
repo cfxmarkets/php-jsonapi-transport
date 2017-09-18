@@ -11,7 +11,7 @@ trait ServerRequestTrait {
     protected static $pathFormat = '/[resource](/[id](/relationships(/[relationshipName](/[relationshipId]))))';
     protected static $endpointProps = ['requestedResourceType','requestedResourceId','handlesRelationships','requestedRelationshipName', 'requestedRelationshipId'];
 
-    protected function validateProtocol(): void {
+    protected function validateProtocol() {
         if (!$this->getHeader('Accept') || !in_array('application/vnd.api+json', $this->getHeader('Accept'))) throw new BadAcceptException("Your request must specify that it accepts content of type `application/vnd.api+json` through the `Accept` header.");
         if (in_array($this->getMethod(), ["POST", "PUT", "PATCH"]) && (!$this->getHeader('Content-Type') || !in_array('application/vnd.api+json', $this->getHeader('Content-Type')))) throw new BadContentTypeException("Your request must specify that it is sending content of type `application/vnd.api+json` through the `Content-Type` header");
 
@@ -23,7 +23,7 @@ trait ServerRequestTrait {
         else $this->handlesRelationships = (bool)$this->handlesRelationships;
     }
 
-    protected function parsePath(array $path): array {
+    protected function parsePath(array $path) {
         for ($i = 0; $i < count(static::$endpointProps) && count($path) > 0; $i++) $this->{static::$endpointProps[$i]} = array_shift($path);
 
         // Must not have extra params
@@ -32,11 +32,11 @@ trait ServerRequestTrait {
         return $path;
     }
 
-    public function getRequestedResourceType(): string { return $this->requestedResourceType; }
-    public function getRequestedResourceId(): string { return $this->requestedResourceId; }
-    public function getRequestedRelationshipName(): ?string { return $this->requestedRelationshipName; }
-    public function getRequestedRelationshipId(): ?string { return $this->requestedRelationshipId; }
-    public function getEndpointName(): string {
+    public function getRequestedResourceType() { return $this->requestedResourceType; }
+    public function getRequestedResourceId() { return $this->requestedResourceId; }
+    public function getRequestedRelationshipName() { return $this->requestedRelationshipName; }
+    public function getRequestedRelationshipId() { return $this->requestedRelationshipId; }
+    public function getEndpointName() {
         $path = [];
         foreach(static::$endpointProps as $p) {
             if (!$p) break;
@@ -46,11 +46,11 @@ trait ServerRequestTrait {
         return $this->getMethod()." /".implode("/", $path);
     }
 
-    public function isForResourceCollection(): bool { return $this->requestedResourceId == null; }
-    public function isForPrimaryResource(): bool { return $this->requestedResourceId !== null && $this->handlesRelationships == false; }
-    public function isForRelationshipsCollection(): bool { return $this->handlesRelationships && !$this->requestedRelationshipName; }
-    public function isForSpecificRelationship(): bool { return $this->requestedRelationshipName !== null; }
-    public function isForSpecificRelationshipMember(): bool { return $this->requestedRelationshipId !== null; }
+    public function isForResourceCollection() { return $this->requestedResourceId == null; }
+    public function isForPrimaryResource() { return $this->requestedResourceId !== null && $this->handlesRelationships == false; }
+    public function isForRelationshipsCollection() { return $this->handlesRelationships && !$this->requestedRelationshipName; }
+    public function isForSpecificRelationship() { return $this->requestedRelationshipName !== null; }
+    public function isForSpecificRelationshipMember() { return $this->requestedRelationshipId !== null; }
 }
 
 

@@ -4,8 +4,8 @@ namespace KS\JsonApi;
 trait ResponseTrait {
     protected $jsonApiDoc;
 
-    public function getJsonApiDoc(): DocumentInterface { return $this->jsonApiDoc; }
-    public function withJsonApiDoc(DocumentInterface $doc=null): ResponseInterface {
+    public function getJsonApiDoc() { return $this->jsonApiDoc; }
+    public function withJsonApiDoc(DocumentInterface $doc=null) {
         if ($doc === $this->jsonApiDoc) return $this;
 
         $new = clone $this;
