@@ -1,0 +1,35 @@
+{
+    "name": "kael-shipman/php-jsonapi-transport",
+    "description": "This package implements the JSON-API transport protocol specification (i.e., it enforces certain request and response parameters).",
+    "keywords": [ "jsonapi", "json-api", "json api", "rest", "api" ],
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Kael Shipman",
+            "homepage": "https://colors.kaelshipman.me"
+        }
+    ],
+    "require" : {
+        "php" : ">=7.1",
+        "kael-shipman/php-jsonapi-objects": "~0.7.0",
+        "guzzlehttp/psr7": "~1.4.2"
+    },
+    "require-dev" : {
+        "phpunit/phpunit" : "~6.3.0"
+    },
+    "autoload" : {
+        "psr-4" : {
+            "KS\\JsonApi\\" : "src/",
+            "KS\\JsonApi\\Test\\": "tests/classes/"
+        },
+        "files": [
+            "src/Exceptions.php"
+        ]
+    },
+    "repositories" : [
+        {
+            "type": "git",
+            "url": "https://github.com/kael-shipman/php-jsonapi-objects.git"
+        }
+    ]
+}
