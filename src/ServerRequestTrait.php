@@ -33,7 +33,7 @@ trait ServerRequestTrait {
     }
 
     public function getRequestedResourceType(): string { return $this->requestedResourceType; }
-    public function getRequestedResourceId(): string { return $this->requestedResourceId; }
+    public function getRequestedResourceId(): ?string { return $this->requestedResourceId; }
     public function getRequestedRelationshipName(): ?string { return $this->requestedRelationshipName; }
     public function getRequestedRelationshipId(): ?string { return $this->requestedRelationshipId; }
     public function getEndpointName(): string {
