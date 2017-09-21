@@ -10,6 +10,7 @@ class ServerRequestTest extends \PHPUnit\Framework\TestCase {
     public function testThrowsProtocolErrorOnBadAcceptHeader() {
         try {
             $r = new ServerRequest("GET", "https://api.kaelshipman.me/test-resources");
+            $r->validateProtocol();
             $this->fail("Should have thrown exception");
         }  catch (BadAcceptException $e) {
             $this->assertTrue(true, "this is the expected behavior");
@@ -17,6 +18,7 @@ class ServerRequestTest extends \PHPUnit\Framework\TestCase {
 
         try {
             $r = new ServerRequest("GET", "https://api.kaelshipman.me/test-resources", [ 'Accept' => 'application/json' ]);
+            $r->validateProtocol();
             $this->fail("Should have thrown exception");
         }  catch (BadAcceptException $e) {
             $this->assertTrue(true, "this is the expected behavior");
@@ -26,6 +28,7 @@ class ServerRequestTest extends \PHPUnit\Framework\TestCase {
     public function testThrowsProtocolErrorOnBadContentTypeHeader() {
         try {
             $r = new ServerRequest("POST", "https://api.kaelshipman.me/test-resources", [ 'Accept' => 'application/vnd.api+json' ], json_encode([ 'data' => [ 'type' => 'test-resources', 'id' => '12345' ] ]));
+            $r->validateProtocol();
             $this->fail("Should have thrown exception");
         }  catch (BadContentTypeException $e) {
             $this->assertTrue(true, "this is the expected behavior");
@@ -33,6 +36,7 @@ class ServerRequestTest extends \PHPUnit\Framework\TestCase {
 
         try {
             $r = new ServerRequest("POST", "https://api.kaelshipman.me/test-resources", [ 'Content-Type' => 'application/json', 'Accept' => 'application/vnd.api+json' ], json_encode([ 'data' => [ 'type' => 'test-resources', 'id' => '12345' ] ]));
+            $r->validateProtocol();
             $this->fail("Should have thrown exception");
         }  catch (BadContentTypeException $e) {
             $this->assertTrue(true, "this is the expected behavior");
@@ -42,6 +46,7 @@ class ServerRequestTest extends \PHPUnit\Framework\TestCase {
     public function testThrowsProtocolErrorOnNoResourceDefined() {
         try {
             $r = new ServerRequest("GET", "https://api.kaelshipman.me", [ 'Accept' => 'application/vnd.api+json' ]);
+            $r->validateProtocol();
             $this->fail("Should have thrown exception");
         }  catch (BadUriException $e) {
             $this->assertTrue(true, "this is the expected behavior");
@@ -51,6 +56,7 @@ class ServerRequestTest extends \PHPUnit\Framework\TestCase {
     public function testThrowsProtocolErrorOnRelationshipsMisspelled() {
         try {
             $r = new ServerRequest("GET", "https://api.kaelshipman.me/test-resources/12345/reltasdfe/friends", [ 'Accept' => 'application/vnd.api+json' ]);
+            $r->validateProtocol();
             $this->fail("Should have thrown exception");
         }  catch (BadUriException $e) {
             $this->assertTrue(true, "this is the expected behavior");
@@ -60,6 +66,7 @@ class ServerRequestTest extends \PHPUnit\Framework\TestCase {
     public function testThrowsProtocolErrorOnExtraParams() {
         try {
             $r = new ServerRequest("GET", "https://api.kaelshipman.me/test-resources/12345/relationships/friends/54321/invalid-extra-param", [ 'Accept' => 'application/vnd.api+json' ]);
+            $r->validateProtocol();
             $this->fail("Should have thrown exception");
         }  catch (ProtocolException $e) {
             $this->assertTrue(true, "this is the expected behavior");

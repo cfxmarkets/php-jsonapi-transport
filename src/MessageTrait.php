@@ -1,7 +1,7 @@
 <?php
 namespace KS\JsonApi;
 
-trait ResponseTrait {
+trait MessageTrait {
     protected $jsonApiDoc;
 
     public function getJsonApiDoc() { return $this->jsonApiDoc; }
