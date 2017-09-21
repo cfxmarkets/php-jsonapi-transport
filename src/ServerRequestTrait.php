@@ -82,8 +82,7 @@ trait ServerRequestTrait {
     public function getEndpointName() {
         $path = [];
         foreach(static::getEndpointProps() as $p) {
-            //TODO: This is broken
-            if (!$this->$p()) break;
+            if (!$this->$p) break;
             if ($p == 'handlesRelationships') $p = 'relationships';
             $path[] = $p;
         }
