@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "6514bb87402fb048e52f166e5e1dc406",
+    "content-hash": "a7cc97d2a203b3e938978f0dee7c43b6",
     "packages": [
         {
             "name": "guzzlehttp/psr7",
@@ -66,14 +66,14 @@
         },
         {
             "name": "kael-shipman/php-jsonapi-objects",
-            "version": "v0.7.1",
+            "version": "v0.7.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/cfxmarkets/php-jsonapi-objects.git",
-                "reference": "b0f8ac25943a748bb6c79db47b6992dc9b240edc"
+                "reference": "d4212dcdb132c5192847109f2f27d83cf5fd4484"
             },
             "require": {
-                "kael-shipman/php-std-traits": "~3.0",
+                "kael-shipman/php-std-traits": "~3.2",
                 "php": ">=5.4 <7"
             },
             "require-dev": {
@@ -107,7 +107,7 @@
                 "json",
                 "jsonapi"
             ],
-            "time": "2017-09-18T21:21:25+00:00"
+            "time": "2017-09-22T20:28:20+00:00"
         },
         {
             "name": "kael-shipman/php-std-traits",
