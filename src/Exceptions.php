@@ -11,4 +11,5 @@ class InvalidOperationException extends ProtocolException { }
 
 class JsonApiProtocolException extends ProtocolException { }
 class JsonApiMissingDataException extends JsonApiProtocolException { }
+class JsonApiBadInputException extends JsonApiProtocolException { }
 
