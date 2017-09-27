@@ -24,10 +24,10 @@ trait ServerRequestTrait {
         if (in_array($this->getMethod(), ["POST", "PUT", "PATCH"]) && (!$this->getHeader('Content-Type') || !in_array('application/vnd.api+json', $this->getHeader('Content-Type')))) throw new BadContentTypeException("Your request must specify that it is sending content of type `application/vnd.api+json` through the `Content-Type` header");
 
         // Must have a resource type
-        if (!$this->requestedResourceType) throw new BadUriException("Arguments passed to this API should conform to the following format: `".static::getPathFormat()."`. You've passed `{$this->getUri()->getPath()}`.");
+        if (!$this->requestedResourceType) throw new BadUriException("Missing resource type. Arguments passed to this API should conform to the following format: `".static::getPathFormat()."`. You've passed `{$this->getUri()->getPath()}`.");
 
         // Must specify relationship requests correctly
-        if ($this->handlesRelationships && $this->handlesRelationships != 'relationships') throw new BadUriException("Arguments passed to this API should conform to the following format: `".static::getPathFormat()."`. You've passed `{$this->getUri()->getPath()}`.");
+        if ($this->handlesRelationships && $this->handlesRelationships != 'relationships') throw new BadUriException("Malformed `relationships` keyword. Arguments passed to this API should conform to the following format: `".static::getPathFormat()."`. You've passed `{$this->getUri()->getPath()}`.");
         else $this->handlesRelationships = (bool)$this->handlesRelationships;
 
         return $this;
@@ -47,7 +47,7 @@ trait ServerRequestTrait {
         for ($i = 0; $i < count($endpointProps) && count($path) > 0; $i++) $this->{$endpointProps[$i]} = array_shift($path);
 
         // Must not have extra params
-        if (count($path) > 0) throw new ProtocolException("Arguments passed to this API should conform to the following format: `".static::getPathFormat()."`. You've passed `{$this->getUri()->getPath()}`.");
+        if (count($path) > 0) throw new ProtocolException("Extra path arguments. Arguments passed to this API should conform to the following format: `".static::getPathFormat()."`. You've passed `{$this->getUri()->getPath()}`.");
 
         return $path;
     }
