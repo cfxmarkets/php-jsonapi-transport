@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "e41d0465e6ed4dafc6b84ff4459a88bf",
+    "content-hash": "a7cc97d2a203b3e938978f0dee7c43b6",
     "packages": [
         {
             "name": "guzzlehttp/psr7",
@@ -66,18 +66,17 @@
         },
         {
             "name": "kael-shipman/php-jsonapi-objects",
-            "version": "v0.7.0",
+            "version": "v0.7.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/cfxmarkets/php-jsonapi-objects.git",
-                "reference": "04cba690c5fc445e18658494d71a1e42d1584d02"
+                "reference": "d4212dcdb132c5192847109f2f27d83cf5fd4484"
             },
             "require": {
-                "kael-shipman/php-std-traits": "~3.0.0",
+                "kael-shipman/php-std-traits": "~3.2",
                 "php": ">=5.4 <7"
             },
             "require-dev": {
-                "kael-shipman/factory": "~3.1.0",
                 "phpunit/phpunit": "~4.8.0"
             },
             "type": "library",
@@ -108,15 +107,15 @@
                 "json",
                 "jsonapi"
             ],
-            "time": "2017-09-15T14:46:21+00:00"
+            "time": "2017-09-22T20:28:20+00:00"
         },
         {
             "name": "kael-shipman/php-std-traits",
-            "version": "v3.0.0",
+            "version": "v3.2.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/cfxmarkets/php-std-traits.git",
-                "reference": "30c1fc0f0a25abc20fc36fbef7eeb8c6fbaa2fd6"
+                "reference": "a1183972b0291cb22907e28bee4bf82da51b6fb3"
             },
             "require": {
                 "php": ">=5.4.0 < 7"
@@ -153,7 +152,7 @@
             "keywords": [
                 "traits"
             ],
-            "time": "2017-09-07T19:41:25+00:00"
+            "time": "2017-09-15T22:48:30+00:00"
         },
         {
             "name": "psr/http-message",

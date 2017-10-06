@@ -2,7 +2,7 @@
 namespace KS\JsonApi;
 
 class Response extends \GuzzleHttp\Psr7\Response implements ResponseInterface {
-    use ResponseTrait;
+    use MessageTrait;
 
     public function __construct($status=200, array $headers=[], $body=null, $version='1.1', $reason=null) {
         if ($body) throw new \RuntimeException("The `\$body` paramter may not be used with this class. Instead, you should set the body content by passing a JsonApi Document object to  `withJsonApiDoc`.");
