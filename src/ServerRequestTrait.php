@@ -33,7 +33,7 @@ trait ServerRequestTrait {
         // If the request is a POST/PUT/PATCH...
         if (in_array($this->getMethod(), ['POST','PUT','PATCH'])) {
             // then it must have a jsonapi doc and valid data
-            if (!$this->getJsonApiDoc() || !$this->getJsonApiDoc()->getData()) throw new JsonApiMissingDataException("It appears as though you're trying to create or update a resource of type `{$r->getRequestedResourceType()}`, but you haven't passed in any data. Please pass in a resource in json-api format via the request body.");
+            if (!$this->getJsonApiDoc() || !$this->getJsonApiDoc()->getData()) throw new JsonApiMissingDataException("It appears as though you're trying to create or update a resource of type `{$this->getRequestedResourceType()}`, but you haven't passed in any data. Please pass in a resource in json-api format via the request body.");
 
             // and if it's a POST, it can't have an ID
             if ($this->getMethod() == 'POST' && ($id = $this->getJsonApiDoc()->getData()->getId())) throw new JsonApiBadInputException("It appears as though you've sent an existing resource (id `$id`) with a POST request. POST requests are for creating new resources. If you'd like to udpate a resource, you should use PATCH or PUT instead. If you'd like to create a new resource, send the resource without an ID.");
