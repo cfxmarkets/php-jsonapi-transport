@@ -11,7 +11,7 @@
     ],
     "require" : {
         "php" : ">=5.4 <7.1",
-        "kael-shipman/php-jsonapi-objects": "~0.7",
+        "kael-shipman/php-jsonapi-objects": "dev-dev-v2 as 1.0.0",
         "guzzlehttp/psr7": "~1.4.2"
     },
     "require-dev" : {
@@ -38,10 +38,5 @@
             "type": "git",
             "url": "https://github.com/kael-shipman/psr7.git"
         }
-    ],
-    "extra": {
-        "branch-aliases": {
-            "dev-dev-v2": "0.4.x-dev"
-        }
-    }
+    ]
 }

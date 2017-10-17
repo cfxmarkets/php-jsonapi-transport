@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "8df32ad110e6490b8c387f3f7dacb9fd",
+    "content-hash": "8ec52f9da62f5b93d78b22f5a3d6d9c5",
     "packages": [
         {
             "name": "guzzlehttp/psr7",
@@ -66,11 +66,11 @@
         },
         {
             "name": "kael-shipman/php-jsonapi-objects",
-            "version": "v0.8.0",
+            "version": "dev-dev-v2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/cfxmarkets/php-jsonapi-objects.git",
-                "reference": "fb7f8bb641d4502d4febe90f6251d5d3b5521b94"
+                "reference": "d7382ead1b8e361674a02e321b231486e9b36671"
             },
             "require": {
                 "kael-shipman/php-std-traits": "~3.2",
@@ -83,7 +83,10 @@
             "autoload": {
                 "psr-4": {
                     "KS\\JsonApi\\": "src/"
-                }
+                },
+                "files": [
+                    "src/Exceptions.php"
+                ]
             },
             "license": [
                 "MIT"
@@ -102,7 +105,7 @@
                 "json",
                 "jsonapi"
             ],
-            "time": "2017-10-06T20:51:09+00:00"
+            "time": "2017-10-17T14:59:18+00:00"
         },
         {
             "name": "kael-shipman/php-std-traits",
@@ -1165,9 +1168,18 @@
             "time": "2017-10-05T14:38:30+00:00"
         }
     ],
-    "aliases": [],
+    "aliases": [
+        {
+            "alias": "1.0.0",
+            "alias_normalized": "1.0.0.0",
+            "version": "dev-dev-v2",
+            "package": "kael-shipman/php-jsonapi-objects"
+        }
+    ],
     "minimum-stability": "stable",
-    "stability-flags": [],
+    "stability-flags": {
+        "kael-shipman/php-jsonapi-objects": 20
+    },
     "prefer-stable": false,
     "prefer-lowest": false,
     "platform": {
