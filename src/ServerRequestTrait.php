@@ -36,7 +36,10 @@ trait ServerRequestTrait {
             if (!$this->getJsonApiDoc() || !$this->getJsonApiDoc()->getData()) throw new JsonApiMissingDataException("It appears as though you're trying to create or update a resource of type `{$this->getRequestedResourceType()}`, but you haven't passed in any data. Please pass in a resource in json-api format via the request body.");
 
             // and if it's a POST, it can't have an ID
-            if ($this->getMethod() == 'POST' && ($id = $this->getJsonApiDoc()->getData()->getId())) throw new JsonApiBadInputException("It appears as though you've sent an existing resource (id `$id`) with a POST request. POST requests are for creating new resources. If you'd like to udpate a resource, you should use PATCH or PUT instead. If you'd like to create a new resource, send the resource without an ID.");
+            if ($this->getMethod() == 'POST') {
+                if ($this->requestedResourceId) throw new JsonApiBadInputException("It appears as though you're trying to POST to a specific asset (id `$this->requestedResourceId`). You may only POST to a resource collection endpoint (e.g., `POST /my-resources`, not `POST /my-resources/12345`). If you'd like to update this resource, you should use `PATCH` instead.");
+                if (($id = $this->getJsonApiDoc()->getData()->getId())) throw new JsonApiBadInputException("It appears as though you've sent an existing resource (id `$id`) with a POST request. POST requests are for creating new resources. If you'd like to udpate a resource, you should use PATCH or PUT instead. If you'd like to create a new resource, send the resource without an ID.");
+            }
         }
 
         return $this;
