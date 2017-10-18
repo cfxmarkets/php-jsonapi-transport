@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "a7cc97d2a203b3e938978f0dee7c43b6",
+    "content-hash": "a238666654eec327a57370e5366c7c91",
     "packages": [
         {
             "name": "guzzlehttp/psr7",
@@ -12,7 +12,7 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/kael-shipman/psr7.git",
-                "reference": "654378853a64c8c5f865b02a1a750f4a2136a931"
+                "reference": "5e9b4ad6f43383b4a9a1005139149c0a07df805a"
             },
             "require": {
                 "php": ">=5.4.0",
@@ -62,15 +62,15 @@
                 "uri",
                 "url"
             ],
-            "time": "2017-09-13T21:20:36+00:00"
+            "time": "2017-09-21T18:27:12+00:00"
         },
         {
             "name": "kael-shipman/php-jsonapi-objects",
-            "version": "v0.7.2",
+            "version": "v0.8.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/cfxmarkets/php-jsonapi-objects.git",
-                "reference": "d4212dcdb132c5192847109f2f27d83cf5fd4484"
+                "reference": "fb7f8bb641d4502d4febe90f6251d5d3b5521b94"
             },
             "require": {
                 "kael-shipman/php-std-traits": "~3.2",
@@ -83,11 +83,6 @@
             "autoload": {
                 "psr-4": {
                     "KS\\JsonApi\\": "src/"
-                }
-            },
-            "autoload-dev": {
-                "psr-4": {
-                    "Test\\": "tests/classes"
                 }
             },
             "license": [
@@ -107,15 +102,15 @@
                 "json",
                 "jsonapi"
             ],
-            "time": "2017-09-22T20:28:20+00:00"
+            "time": "2017-10-06T20:51:09+00:00"
         },
         {
             "name": "kael-shipman/php-std-traits",
-            "version": "v3.2.0",
+            "version": "v3.2.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/cfxmarkets/php-std-traits.git",
-                "reference": "a1183972b0291cb22907e28bee4bf82da51b6fb3"
+                "reference": "996327e11ffbae9ac06b918d9a78e109d14a6a00"
             },
             "require": {
                 "php": ">=5.4.0 < 7"
@@ -152,7 +147,7 @@
             "keywords": [
                 "traits"
             ],
-            "time": "2017-09-15T22:48:30+00:00"
+            "time": "2017-10-16T04:03:38+00:00"
         },
         {
             "name": "psr/http-message",
@@ -1122,16 +1117,16 @@
         },
         {
             "name": "symfony/yaml",
-            "version": "v2.8.27",
+            "version": "v2.8.28",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/yaml.git",
-                "reference": "4c29dec8d489c4e37cf87ccd7166cd0b0e6a45c5"
+                "reference": "842fb6df22180244b4c65935ce1a88d324e5ff9e"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/yaml/zipball/4c29dec8d489c4e37cf87ccd7166cd0b0e6a45c5",
-                "reference": "4c29dec8d489c4e37cf87ccd7166cd0b0e6a45c5",
+                "url": "https://api.github.com/repos/symfony/yaml/zipball/842fb6df22180244b4c65935ce1a88d324e5ff9e",
+                "reference": "842fb6df22180244b4c65935ce1a88d324e5ff9e",
                 "shasum": ""
             },
             "require": {
@@ -1167,7 +1162,7 @@
             ],
             "description": "Symfony Yaml Component",
             "homepage": "https://symfony.com",
-            "time": "2017-06-01T20:52:29+00:00"
+            "time": "2017-10-05T14:38:30+00:00"
         }
     ],
     "aliases": [],
