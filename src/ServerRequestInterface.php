@@ -1,5 +1,5 @@
 <?php
-namespace KS\JsonApi;
+namespace CFX\Transport;
 
 interface ServerRequestInterface extends \Psr\Http\Message\ServerRequestInterface {
     public function validateProtocol();

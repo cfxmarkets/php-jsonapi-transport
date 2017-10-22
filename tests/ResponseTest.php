@@ -1,9 +1,9 @@
 <?php
-namespace KS\JsonApi\Test;
+namespace CFX\Transport\Test;
 
-use \KS\JsonApi\Document;
-use \KS\JsonApi\Response;
-use \KS\JsonApi\BadContentTypeException;
+use \CFX\Transport\Document;
+use \CFX\Transport\Response;
+use \CFX\Transport\BadContentTypeException;
 
 class ResponseTest extends \PHPUnit\Framework\TestCase {
     public function testInstantiatesWithoutContentType() {

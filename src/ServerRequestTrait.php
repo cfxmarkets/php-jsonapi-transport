@@ -1,5 +1,5 @@
 <?php
-namespace KS\JsonApi;
+namespace CFX\Transport;
 
 trait ServerRequestTrait {
     protected $requestedResourceType;

@@ -1,5 +1,5 @@
 <?php
-namespace KS\JsonApi;
+namespace CFX\Transport;
 
 class ServerRequest extends \GuzzleHttp\Psr7\ServerRequest implements ServerRequestInterface {
     use MessageTrait, ServerRequestTrait;

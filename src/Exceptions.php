@@ -1,5 +1,5 @@
 <?php
-namespace KS\JsonApi;
+namespace CFX\Transport;
 
 class ProtocolException extends \RuntimeException { }
 

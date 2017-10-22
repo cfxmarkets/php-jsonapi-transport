@@ -1,10 +1,10 @@
 <?php
 
-use KS\JsonApi\ServerRequest;
-use KS\JsonApi\ProtocolException;
-use KS\JsonApi\BadAcceptException;
-use KS\JsonApi\BadContentTypeException;
-use KS\JsonApi\BadUriException;
+use CFX\Transport\ServerRequest;
+use CFX\Transport\ProtocolException;
+use CFX\Transport\BadAcceptException;
+use CFX\Transport\BadContentTypeException;
+use CFX\Transport\BadUriException;
 
 class ServerRequestTest extends \PHPUnit\Framework\TestCase {
     public function testThrowsProtocolErrorOnBadAcceptHeader() {
@@ -75,12 +75,12 @@ class ServerRequestTest extends \PHPUnit\Framework\TestCase {
 
     public function testAcceptsGoodGETRequest() {
         $r = new ServerRequest("GET", "https://api.kaelshipman.me/test-resources/12345", [ 'Accept' => 'application/vnd.api+json' ]);
-        $this->assertInstanceOf('\\KS\\JsonApi\\ServerRequest', $r, "Should be a JsonApi ServerRequest object");
+        $this->assertInstanceOf('\\CFX\\JsonApi\\ServerRequest', $r, "Should be a JsonApi ServerRequest object");
     }
 
     public function testAcceptsGoodPOSTRequest() {
         $r = new ServerRequest("POST", "https://api.kaelshipman.me/test-resources", [ 'Content-Type' => 'application/vnd.api+json', 'Accept' => 'application/vnd.api+json' ], json_encode([ 'data' => [ 'type' => 'test-resources', 'id' => '12345', 'attributes' => [ 'color' => 'red' ]]]));
-        $this->assertInstanceOf('\\KS\\JsonApi\\ServerRequest', $r, "Should be a JsonApi ServerRequest object");
+        $this->assertInstanceOf('\\CFX\\JsonApi\\ServerRequest', $r, "Should be a JsonApi ServerRequest object");
     }
 
     public function testParsesUriCorrectly() {

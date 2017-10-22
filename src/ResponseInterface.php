@@ -1,5 +1,5 @@
 <?php
-namespace KS\JsonApi;
+namespace CFX\Transport;
 
 interface ResponseInterface extends \Psr\Http\Message\ResponseInterface {
     public function getJsonApiDoc();
