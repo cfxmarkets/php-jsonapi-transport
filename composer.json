@@ -11,7 +11,7 @@
     ],
     "require" : {
         "php" : ">=5.4",
-        "cfxmarkets/php-jsonapi-objects": "dev-dev-v2 as 1.0.0",
+        "cfxmarkets/php-jsonapi-objects": "1.0.x-dev",
         "guzzlehttp/psr7": "~1.4.4"
     },
     "require-dev" : {
@@ -19,7 +19,7 @@
     },
     "autoload" : {
         "psr-4" : {
-            "CFX\\Transport\\" : "src/"
+            "CFX\\JsonApi\\" : "src/"
         },
         "files": [
             "src/Exceptions.php"
@@ -38,5 +38,10 @@
             "type": "git",
             "url": "https://github.com/kael-shipman/psr7.git"
         }
-    ]
+    ],
+    "extra": {
+        "branch-alias": {
+            "dev-dev-v2": "0.5.x-dev"
+        }
+    }
 }

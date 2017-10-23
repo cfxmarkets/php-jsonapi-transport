@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "9baec5f42edc2fe93d368227863e69ea",
+    "content-hash": "e2629e4fe9deea20351efc55f378cf30",
     "packages": [
         {
             "name": "cfxmarkets/php-jsonapi-objects",
@@ -12,7 +12,7 @@
             "dist": {
                 "type": "path",
                 "url": "../php-jsonapi-objects",
-                "reference": "f7ba81a75f57837af911232cb912c5fda9ca4bf2",
+                "reference": "7f4fd36e62bdf2ef86a8b1837df736ddb5a6b744",
                 "shasum": null
             },
             "require": {
@@ -23,6 +23,11 @@
                 "phpunit/phpunit": "~4.8.0"
             },
             "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-dev-v2": "1.0.x-dev"
+                }
+            },
             "autoload": {
                 "psr-4": {
                     "CFX\\JsonApi\\": "src/"
@@ -1166,14 +1171,7 @@
             "time": "2017-10-05T14:38:30+00:00"
         }
     ],
-    "aliases": [
-        {
-            "alias": "1.0.0",
-            "alias_normalized": "1.0.0.0",
-            "version": "dev-dev-v2",
-            "package": "cfxmarkets/php-jsonapi-objects"
-        }
-    ],
+    "aliases": [],
     "minimum-stability": "stable",
     "stability-flags": {
         "cfxmarkets/php-jsonapi-objects": 20
