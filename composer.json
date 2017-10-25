@@ -28,8 +28,8 @@
     },
     "repositories" : [
         {
-            "type" : "path",
-            "url" : "../php-jsonapi-objects"
+            "type" : "git",
+            "url" : "https://github.com/cfxmarkets/php-jsonapi-objects.git"
         },
         {
             "type" : "git",
