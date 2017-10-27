@@ -42,6 +42,7 @@
     ],
     "extra": {
         "branch-alias": {
+            "dev-v0.5.x" : "v0.5.x-dev"
         }
     }
 }
