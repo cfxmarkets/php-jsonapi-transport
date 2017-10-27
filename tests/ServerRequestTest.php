@@ -1,10 +1,10 @@
 <?php
 
-use CFX\Transport\ServerRequest;
-use CFX\Transport\ProtocolException;
-use CFX\Transport\BadAcceptException;
-use CFX\Transport\BadContentTypeException;
-use CFX\Transport\BadUriException;
+use CFX\JsonApi\ServerRequest;
+use CFX\JsonApi\ProtocolException;
+use CFX\JsonApi\BadAcceptException;
+use CFX\JsonApi\BadContentTypeException;
+use CFX\JsonApi\BadUriException;
 
 class ServerRequestTest extends \PHPUnit\Framework\TestCase {
     public function testThrowsProtocolErrorOnBadAcceptHeader() {

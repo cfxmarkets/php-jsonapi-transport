@@ -1,9 +1,9 @@
 <?php
-namespace CFX\Transport\Test;
+namespace CFX\JsonApi\Test;
 
-use \CFX\Transport\Document;
-use \CFX\Transport\Response;
-use \CFX\Transport\BadContentTypeException;
+use \CFX\JsonApi\Document;
+use \CFX\JsonApi\Response;
+use \CFX\JsonApi\BadContentTypeException;
 
 class ResponseTest extends \PHPUnit\Framework\TestCase {
     public function testInstantiatesWithoutContentType() {
@@ -60,7 +60,7 @@ class ResponseTest extends \PHPUnit\Framework\TestCase {
         $r = new Response(200);
         $this->assertFalse($r->hasHeader('Content-Type'), "Shouldn't have content type yet");
 
-        $r = $r->withJsonApiDoc(new Document(new Factory()));
+        $r = $r->withJsonApiDoc(new Document());
         $this->assertEquals('application/vnd.api+json; charset=utf-8', $r->getHeaderLine('Content-Type'), "Should have correct Content type");
 
         $r = $r->withJsonApiDoc(null);
