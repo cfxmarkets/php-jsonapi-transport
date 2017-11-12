@@ -31,7 +31,7 @@ class ServerRequest extends \GuzzleHttp\Psr7\ServerRequest implements ServerRequ
         }
 
         // Must have a resource type
-        if (!$this->getRequestedResourceType()) throw new BadUriException("Missing resource type. Arguments passed to this API should conform to the following format: `".static::getPathFormat()."`. You've passed `{$this->getUri()->getPath()}`.");
+        if (!$this->getRequestedResourceType()) throw new BadUriException("Missing resource type. Arguments passed to this API should conform to a JSON API path specification. You've passed `{$this->getUri()->getPath()}`.");
 
         // If the request is a POST/PUT/PATCH...
         if (in_array($this->getMethod(), ['POST','PUT','PATCH'])) {
