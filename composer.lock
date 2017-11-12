@@ -4,15 +4,59 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "a238666654eec327a57370e5366c7c91",
+    "content-hash": "62bbd50cde962998a033d96623ad0c36",
     "packages": [
         {
+            "name": "cfxmarkets/php-jsonapi-objects",
+            "version": "v1.1.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/cfxmarkets/php-jsonapi-objects.git",
+                "reference": "eb27b05da58e2d413faa09e13721ebaef52890f0"
+            },
+            "require": {
+                "kael-shipman/php-std-traits": "~3.2",
+                "php": ">=5.4"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "~4.8.0"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": []
+            },
+            "autoload": {
+                "psr-4": {
+                    "CFX\\JsonApi\\": "src/"
+                },
+                "files": [
+                    "src/Exceptions.php"
+                ]
+            },
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "CFX Markets and Contributors",
+                    "homepage": "https://github.com/cfxmarkets/php-jsonapi-objects/graphs/contributors"
+                }
+            ],
+            "description": "A class that provides a PHP implementation of JSON API objects. Note, this is not a protocol implementation, it is simply an implementation of classes as described by the [json-api spec](http://jsonapi.org/format/).",
+            "keywords": [
+                "api",
+                "json",
+                "jsonapi"
+            ],
+            "time": "2017-11-12T22:05:07+00:00"
+        },
+        {
             "name": "guzzlehttp/psr7",
-            "version": "1.4.3",
+            "version": "v1.4.4",
             "source": {
                 "type": "git",
                 "url": "https://github.com/kael-shipman/psr7.git",
-                "reference": "5e9b4ad6f43383b4a9a1005139149c0a07df805a"
+                "reference": "e5b3c752939e4bdf986705eb1b0fc4f40ab64ad9"
             },
             "require": {
                 "php": ">=5.4.0",
@@ -62,47 +106,7 @@
                 "uri",
                 "url"
             ],
-            "time": "2017-09-21T18:27:12+00:00"
-        },
-        {
-            "name": "kael-shipman/php-jsonapi-objects",
-            "version": "v0.8.0",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/cfxmarkets/php-jsonapi-objects.git",
-                "reference": "fb7f8bb641d4502d4febe90f6251d5d3b5521b94"
-            },
-            "require": {
-                "kael-shipman/php-std-traits": "~3.2",
-                "php": ">=5.4 <7"
-            },
-            "require-dev": {
-                "phpunit/phpunit": "~4.8.0"
-            },
-            "type": "library",
-            "autoload": {
-                "psr-4": {
-                    "KS\\JsonApi\\": "src/"
-                }
-            },
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Kael Shipman",
-                    "email": "kael.shipman@gmail.com",
-                    "homepage": "https://colors.kaelshipman.me",
-                    "role": "Developer"
-                }
-            ],
-            "description": "A class that provides a PHP implementation of JSON API objects. Note, this is not a protocol implementation, it is simply an implementation of classes as described by the [json-api spec](http://jsonapi.org/format/).",
-            "keywords": [
-                "api",
-                "json",
-                "jsonapi"
-            ],
-            "time": "2017-10-06T20:51:09+00:00"
+            "time": "2017-10-22T19:28:30+00:00"
         },
         {
             "name": "kael-shipman/php-std-traits",
@@ -1117,16 +1121,16 @@
         },
         {
             "name": "symfony/yaml",
-            "version": "v2.8.28",
+            "version": "v2.8.29",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/yaml.git",
-                "reference": "842fb6df22180244b4c65935ce1a88d324e5ff9e"
+                "reference": "d819bf267e901727141fe828ae888486fd21236e"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/yaml/zipball/842fb6df22180244b4c65935ce1a88d324e5ff9e",
-                "reference": "842fb6df22180244b4c65935ce1a88d324e5ff9e",
+                "url": "https://api.github.com/repos/symfony/yaml/zipball/d819bf267e901727141fe828ae888486fd21236e",
+                "reference": "d819bf267e901727141fe828ae888486fd21236e",
                 "shasum": ""
             },
             "require": {
@@ -1162,7 +1166,7 @@
             ],
             "description": "Symfony Yaml Component",
             "homepage": "https://symfony.com",
-            "time": "2017-10-05T14:38:30+00:00"
+            "time": "2017-11-05T15:25:56+00:00"
         }
     ],
     "aliases": [],
@@ -1171,7 +1175,7 @@
     "prefer-stable": false,
     "prefer-lowest": false,
     "platform": {
-        "php": ">=5.4 <7.1"
+        "php": ">=5.4"
     },
     "platform-dev": []
 }

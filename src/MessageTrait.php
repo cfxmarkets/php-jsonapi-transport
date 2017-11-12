@@ -1,5 +1,5 @@
 <?php
-namespace KS\JsonApi;
+namespace CFX\JsonApi;
 
 trait MessageTrait {
     protected $jsonApiDoc;
@@ -33,5 +33,4 @@ trait MessageTrait {
         return parent::withHeader($name, $value);
     }
 }
-
 

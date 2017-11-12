@@ -1,5 +1,5 @@
 <?php
-namespace KS\JsonApi;
+namespace CFX\JsonApi;
 
 class Response extends \GuzzleHttp\Psr7\Response implements ResponseInterface {
     use MessageTrait;
