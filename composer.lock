@@ -4,15 +4,15 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "62bbd50cde962998a033d96623ad0c36",
+    "content-hash": "b22dad835ae210db7930775c35644080",
     "packages": [
         {
             "name": "cfxmarkets/php-jsonapi-objects",
-            "version": "v1.1.0",
+            "version": "v1.2.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/cfxmarkets/php-jsonapi-objects.git",
-                "reference": "eb27b05da58e2d413faa09e13721ebaef52890f0"
+                "reference": "4d9c67f3197f87a4672b19bb2cab97df7594b947"
             },
             "require": {
                 "kael-shipman/php-std-traits": "~3.2",
@@ -23,7 +23,10 @@
             },
             "type": "library",
             "extra": {
-                "branch-alias": []
+                "branch-alias": {
+                    "dev-v1.1.x": "1.1.x-dev",
+                    "dev-v1.2.x": "1.2.x-dev"
+                }
             },
             "autoload": {
                 "psr-4": {
@@ -48,7 +51,7 @@
                 "json",
                 "jsonapi"
             ],
-            "time": "2017-11-12T22:05:07+00:00"
+            "time": "2017-11-16T19:52:26+00:00"
         },
         {
             "name": "guzzlehttp/psr7",
@@ -1121,7 +1124,7 @@
         },
         {
             "name": "symfony/yaml",
-            "version": "v2.8.29",
+            "version": "v2.8.31",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/yaml.git",
