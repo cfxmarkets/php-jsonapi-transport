@@ -66,5 +66,23 @@ class ResponseTest extends \PHPUnit\Framework\TestCase {
         $r = $r->withJsonApiDoc(null);
         $this->assertFalse($r->hasHeader('Content-Type'), "Should not have a content type after body removed");
     }
+
+    public function testJsonEncodingErrorsShouldThrowException()
+    {
+        $r = new Response(200);
+        $doc = new Document();
+        $doc->setMeta(new \CFX\JsonApi\Meta([
+            // TODO: Find some way to trigger json encoding error here. This test will fail until we figure this out.
+            "invalidThing" => "﷡﷢﷣﷤﷥﷦﷧﷨",
+            "otherThing" => "Other Thing",
+        ]));
+        $r = $r->withJsonApiDoc($doc);
+        try {
+            $body = $r->getBody();
+            $this->fail("Should have thrown exception getting response body with data that json_encode chokes on. Body: '$body'");
+        } catch (\RuntimeException $e) {
+            $this->assertContains("Error json-encoding JSONAPI Doc", $e->getMessage());
+        }
+    }
 }
 
