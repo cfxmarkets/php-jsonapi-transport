@@ -79,8 +79,10 @@ class ResponseTest extends \PHPUnit\Framework\TestCase {
         $r = $r->withJsonApiDoc($doc);
         try {
             $body = $r->getBody();
+            $this->markTestIncomplete("This test doesn't actually trigger the tested behavior. Need to figure out a way to force php's json_encode to choke.");
             $this->fail("Should have thrown exception getting response body with data that json_encode chokes on. Body: '$body'");
         } catch (\RuntimeException $e) {
+            if ($e instanceof \PHPUnit\
             $this->assertContains("Error json-encoding JSONAPI Doc", $e->getMessage());
         }
     }
